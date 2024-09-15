@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="calculator">
+      <input type="text" id="result" readonly />
+      <div class="button-container">
+        <button
+          class="buttons"
+          id="c"
+          onclick="res = ''; curr = ''; exp = ''; document.querySelector('#result').value = 0;"
+        >
+          C
+        </button>
+        <button
+          class="buttons"
+          id="+/-"
+          onclick="if(exp.charAt(0)=='-') exp = exp.substring(1);
+          else exp = '-' + exp; res = res + exp; document.querySelector('#result').value = exp;"
+        >
+          +/-</button
+        ><button
+          class="buttons"
+          id="%"
+          onclick="exp = eval(exp + '/100') ; document.querySelector('#result').value = exp;"
+        >
+          %
+        </button>
+        <button class="buttons operator" id="/" onclick="concat('/');">
+          ÷
+        </button>
+        <button class="buttons numbers" id="7" onclick="concat('7');">7</button>
+        <button class="buttons numbers" id="8" onclick="concat('8');">8</button>
+        <button class="buttons numbers" id="9" onclick="concat('9');">9</button>
+        <button class="buttons operator" id="*" onclick="concat('*')">×</button>
+        <button class="buttons numbers" id="4" onclick="concat('4');">4</button>
+        <button class="buttons numbers" id="5" onclick="concat('5');">5</button>
+        <button class="buttons numbers" id="6" onclick="concat('6');">6</button>
+        <button class="buttons operator" id="-" onclick="concat('-')">-</button>
+        <button class="buttons numbers" id="1" onclick="concat('1');">1</button>
+        <button class="buttons numbers" id="2" onclick="concat('2');">2</button>
+        <button class="buttons numbers" id="3" onclick="concat('3');">3</button>
+        <button class="buttons operator" id="+" onclick="concat('+')">+</button>
+        <button class="buttons numbers" id="0" onclick="concat(0)">0</button>
+        <button
+          class="buttons numbers"
+          id="."
+          onclick="exp = exp+'.'; document.querySelector('#result').value = exp;"
+        >
+          .
+        </button>
+        <button class="buttons operator" id="=" onclick="concat('='); ">
+          =
+        </button>
+      </div>
+    </div>
+    <script src="../JS/script.js"></script>
+  </body>
+</html>
